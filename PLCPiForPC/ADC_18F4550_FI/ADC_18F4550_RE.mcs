@@ -1,0 +1,23 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=ADC_18F4550_RE.ESYM
+Folder=Intermediary
+[File001]
+Location=D:\MO PHONG\THUC TAP\ADC\ADC_18F4550_FI\ADC_18F4550_RE.o
+Folder=Intermediary
+[File002]
+Location=ADC_18F4550_RE.HEX
+Folder=Output
+[File003]
+Location=ADC_18F4550_RE.LST
+Folder=Output
+[File004]
+Location=ADC_18F4550_RE.ERR
+Folder=Output
+[File005]
+Location=ADC_18F4550_RE.COF
+Folder=Output
+[TOOL_LOC_STAMPS]
+tool_loc{0C155615-B197-4A4B-AEB6-343BB3F41A35}=C:\Program Files (x86)\PICC\Ccsc.exe

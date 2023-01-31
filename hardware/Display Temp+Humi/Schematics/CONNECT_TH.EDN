@@ -1,0 +1,205 @@
+(edif SCHEMATIC1
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status
+  (written
+   (timeStamp 2015 01 16 04 40 16)
+   (program "CAPTURE.EXE" (Version "9.2.446 CIS"))
+   (comment "Original data from OrCAD/CAPTURE schematic"))
+  (comment "")
+  (comment "Friday, January 16, 2015")
+  (comment "F:\PYTHON\PROJECT RASPI_PLC\HARDWARE\DISPLAY TEMP+HUMI\SCHEMATICS\CONNECT_TH.DSN")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment "")
+  (comment ""))
+ (external OrCAD_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell (rename CONN_PCB_15x2MINUSP_0 "CONN PCB 15x2-P_0")
+   (cellType generic)
+   (comment "From OrCAD library CONNECT_TH.DSN")
+   (view NetlistView
+    (viewType netlist)
+    (interface
+     (port &2 (direction INOUT))
+     (port &4 (direction INOUT))
+     (port &6 (direction INOUT))
+     (port &8 (direction INOUT))
+     (port &10 (direction INOUT))
+     (port &12 (direction INOUT))
+     (port &14 (direction INOUT))
+     (port &16 (direction INOUT))
+     (port &18 (direction INOUT))
+     (port &20 (direction INOUT))
+     (port &22 (direction INOUT))
+     (port &24 (direction INOUT))
+     (port &26 (direction INOUT))
+     (port &28 (direction INOUT))
+     (port &30 (direction INOUT))
+     (port &1 (direction INOUT))
+     (port &3 (direction INOUT))
+     (port &5 (direction INOUT))
+     (port &7 (direction INOUT))
+     (port &9 (direction INOUT))
+     (port &11 (direction INOUT))
+     (port &13 (direction INOUT))
+     (port &15 (direction INOUT))
+     (port &17 (direction INOUT))
+     (port &19 (direction INOUT))
+     (port &21 (direction INOUT))
+     (port &23 (direction INOUT))
+     (port &25 (direction INOUT))
+     (port &27 (direction INOUT))
+     (port &29 (direction INOUT))
+     (port &31 (direction INOUT))
+     (port &32 (direction INOUT))))))
+ (library MAIN_LIB
+  (edifLevel 0)
+  (technology
+   (numberDefinition
+    (scale 1 1 (unit distance))))
+  (cell SCHEMATIC1
+   (cellType generic)
+   (view NetlistView
+    (viewType netlist)
+    (interface)
+    (contents
+     (instance J1
+      (viewRef NetlistView
+       (cellRef CONN_PCB_15x2MINUSP_0
+        (libraryRef OrCAD_LIB))))
+     (instance J2
+      (viewRef NetlistView
+       (cellRef CONN_PCB_15x2MINUSP_0
+        (libraryRef OrCAD_LIB))))
+     (net GND
+      (joined
+       (portRef &3 (instanceRef J1))
+       (portRef &32 (instanceRef J2))
+       (portRef &32 (instanceRef J1))
+       (portRef &3 (instanceRef J2))))
+     (net (rename &3_3VDC "3.3VDC")
+      (joined
+       (portRef &2 (instanceRef J2))
+       (portRef &2 (instanceRef J1))))
+     (net &5VDC
+      (joined
+       (portRef &1 (instanceRef J2))
+       (portRef &1 (instanceRef J1))))
+     (net GPIO2
+      (joined
+       (portRef &4 (instanceRef J2))
+       (portRef &4 (instanceRef J1))))
+     (net GPIO3
+      (joined
+       (portRef &6 (instanceRef J1))
+       (portRef &6 (instanceRef J2))))
+     (net GPIO4
+      (joined
+       (portRef &8 (instanceRef J1))
+       (portRef &8 (instanceRef J2))))
+     (net GPIO9
+      (joined
+       (portRef &18 (instanceRef J1))
+       (portRef &18 (instanceRef J2))))
+     (net GPIO13
+      (joined
+       (portRef &26 (instanceRef J1))
+       (portRef &26 (instanceRef J2))))
+     (net GPIO18
+      (joined
+       (portRef &9 (instanceRef J1))
+       (portRef &9 (instanceRef J2))))
+     (net DATA
+      (joined
+       (portRef &29 (instanceRef J1))
+       (portRef &29 (instanceRef J2))))
+     (net GPIO5
+      (joined
+       (portRef &22 (instanceRef J1))
+       (portRef &22 (instanceRef J2))))
+     (net GPIO6
+      (joined
+       (portRef &24 (instanceRef J1))
+       (portRef &24 (instanceRef J2))))
+     (net GPIO7
+      (joined
+       (portRef &19 (instanceRef J1))
+       (portRef &19 (instanceRef J2))))
+     (net GPIO8
+      (joined
+       (portRef &17 (instanceRef J1))
+       (portRef &17 (instanceRef J2))))
+     (net GPIO10
+      (joined
+       (portRef &16 (instanceRef J1))
+       (portRef &16 (instanceRef J2))))
+     (net GPIO11
+      (joined
+       (portRef &20 (instanceRef J1))
+       (portRef &20 (instanceRef J2))))
+     (net GPIO12
+      (joined
+       (portRef &21 (instanceRef J1))
+       (portRef &21 (instanceRef J2))))
+     (net GPIO14
+      (joined
+       (portRef &5 (instanceRef J1))
+       (portRef &5 (instanceRef J2))))
+     (net GPIO15
+      (joined
+       (portRef &7 (instanceRef J1))
+       (portRef &7 (instanceRef J2))))
+     (net GPIO16
+      (joined
+       (portRef &23 (instanceRef J1))
+       (portRef &23 (instanceRef J2))))
+     (net GPIO17
+      (joined
+       (portRef &10 (instanceRef J1))
+       (portRef &10 (instanceRef J2))))
+     (net GPIO19
+      (joined
+       (portRef &28 (instanceRef J2))
+       (portRef &28 (instanceRef J1))))
+     (net GPIO20
+      (joined
+       (portRef &25 (instanceRef J1))
+       (portRef &25 (instanceRef J2))))
+     (net GPIO22
+      (joined
+       (portRef &14 (instanceRef J1))
+       (portRef &14 (instanceRef J2))))
+     (net GPIO23
+      (joined
+       (portRef &11 (instanceRef J2))
+       (portRef &11 (instanceRef J1))))
+     (net GPIO24
+      (joined
+       (portRef &13 (instanceRef J1))
+       (portRef &13 (instanceRef J2))))
+     (net GPIO25
+      (joined
+       (portRef &15 (instanceRef J1))
+       (portRef &15 (instanceRef J2))))
+     (net GPIO26
+      (joined
+       (portRef &30 (instanceRef J2))
+       (portRef &30 (instanceRef J1))))
+     (net GPIO21
+      (joined
+       (portRef &27 (instanceRef J1))
+       (portRef &27 (instanceRef J2))))
+     (net GPIO27
+      (joined
+       (portRef &12 (instanceRef J1))
+       (portRef &12 (instanceRef J2))))))))
+ (design SCHEMATIC1
+  (cellRef SCHEMATIC1
+   (libraryRef MAIN_LIB))))

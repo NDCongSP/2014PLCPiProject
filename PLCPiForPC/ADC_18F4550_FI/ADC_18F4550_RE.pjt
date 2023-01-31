@@ -1,0 +1,56 @@
+[Directories]
+Include=C:\Program Files\PICC\Devices;C:\Program Files\PICC\Drivers;E:\PLCPi_RAS\C#\C#\thu vien\ADC_18F4550_FI;
+Library=
+LinkerScript=
+[defines]
+enabled=0
+D1=
+V1=
+[fileformats]
+forcecoff=0
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+[PROJECT]
+Target=ADC_18F4550_RE.hex
+Development_Mode=
+Processor=0x4550
+Processor_Text=PIC18F4550
+ToolSuite=CCS
+[Target Data]
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+[ADC_18F4550_RE.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=ADC_18F4550_RE.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=ADC_18F4550_RE.c
+[Opened Files]
+1=ADC_18F4550_RE.c
+2=
+3=C:\Program Files\PICC\Drivers\stdlib.h
+4=C:\Program Files\PICC\Drivers\stddef.h
+5=C:\Program Files\PICC\Drivers\string.h
+6=C:\Program Files\PICC\Drivers\ctype.h
+7=C:\Program Files\PICC\Drivers\math.h
+8=

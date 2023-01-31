@@ -1,0 +1,15 @@
+
+Checking Pins and Pin Connections
+
+--------------------------------------------------
+Checking Schematic: SCHEMATIC1
+--------------------------------------------------
+Checking Electrical Rules 
+
+Checking for Unconnected Nets
+WARNING:  [DRC0006]  Net has fewer than two connections DATA
+                    SCHEMATIC1, PAGE1  (2.40, 2.70) 
+
+Checking for Invalid References
+
+Checking for Duplicate References

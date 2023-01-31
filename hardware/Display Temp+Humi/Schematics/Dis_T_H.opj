@@ -1,0 +1,111 @@
+(ExpressProject "Dis_T_H"
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File ".\dis_t_h.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (DRC_Scope "0")
+    (DRC_Action "0")
+    (DRC_Create_Warnings "FALSE")
+    (DRC_Check_Ports "FALSE")
+    (DRC_Check_Off-Page_Connectors "FALSE")
+    (DRC_Identical_References "TRUE")
+    (DRC_Type_Mismatch "TRUE")
+    (DRC_Report_Ports_and_Off-page_Connectors "FALSE")
+    (DRC_SDT_Compatibility "FALSE")
+    (DRC_Report_Off-grid_Objects "FALSE")
+    (DRC_Check_Unconnected_Nets "TRUE")
+    (DRC_Report_Netnames "FALSE")
+    (DRC_View_Output "FALSE")
+    (DRC_Report_File
+       "F:\PYTHON\PROJECT RASPI_PLC\HARDWARE\DISPLAY TEMP+HUMI\SCHEMATICS\DIS_T_H.DRC")
+    (Netlist_TAB "3")
+    (LAYOUT_Netlist_File "DIS_T_H.MNL")
+    (LAYOUT_PCB_Footprint "{PCB Footprint}")
+    (FALSE)
+    (LAYOUT_Units "0")
+    (FALSE)
+    (FALSE)
+    (DRC_Check_for_Misleading_TAP "FALSE")
+    (DRC_Visible_Power_pins "FALSE")
+    ( "TRUE"))
+  (Folder "Outputs"
+    (File ".\dis_t_h.drc"
+      (Type "Report"))
+    (File ".\dis_t_h.mnl"
+      (Type "LAYOUT Netlist File")))
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (74HC595
+      (FullPartName "74HC595.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD\CAPTURE\LIBRARY\SHIFTREGISTER.OLB")
+      (DeviceIndex "0"))
+    ("DOMINO 3"
+      (FullPartName "DOMINO 3.Normal")
+      (LibraryName
+         "D:\HOC TAP\CHUYÊN NGÀNH\ORCARD\THUVIEN LK LAYUOT\PHIHOS LIBRARY.OLB")
+      (DeviceIndex "0"))
+    ("DOMINO 2"
+      (FullPartName "DOMINO 2.Normal")
+      (LibraryName
+         "D:\HOC TAP\CHUYÊN NGÀNH\ORCARD\THUVIEN LK LAYUOT\PHIHOS LIBRARY.OLB")
+      (DeviceIndex "0"))
+    ("CONN PCB 15x2-P"
+      (FullPartName "CONN PCB 15x2-P.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    ("CAP NP"
+      (FullPartName "CAP NP.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    ("DOMINO 4"
+      (FullPartName "DOMINO 4.Normal")
+      (LibraryName
+         "D:\HOC TAP\CHUYÊN NGÀNH\ORCARD\THUVIEN LK LAYUOT\PHIHOS LIBRARY.OLB")
+      (DeviceIndex "0"))
+    ("CONN PCB 5x2"
+      (FullPartName "CONN PCB 5x2.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    ("Led 7seg Anode"
+      (FullPartName "Led 7seg Anode.Normal")
+      (LibraryName
+         "D:\HOC TAP\CHUYÊN NGÀNH\ORCARD\THUVIEN LK LAYUOT\PHIHOS LIBRARY.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "F:\python\Project RasPi_PLC\hardware\Display Temp+Humi\Schematics\dis_t_h.dsn")
+      (Path "Design Resources"
+         "F:\python\Project RasPi_PLC\hardware\Display Temp+Humi\Schematics\dis_t_h.dsn"
+         "SCHEMATIC1")
+      (Path "Outputs")
+      (Select "Design Resources"
+         "F:\python\Project RasPi_PLC\hardware\Display Temp+Humi\Schematics\dis_t_h.dsn"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 0 200 0 395"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 315 1481 64 497")
+        (Scroll "0 0")
+        (Zoom "49")
+        (Occurrence "/"))
+      (Path
+         "F:\PYTHON\PROJECT RASPI_PLC\HARDWARE\DISPLAY TEMP+HUMI\SCHEMATICS\DIS_T_H.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1")))
+  (MPSSessionName "NDCONG"))

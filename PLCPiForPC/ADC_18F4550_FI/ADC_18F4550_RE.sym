@@ -1,0 +1,140 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-005 strtok.save
+006-009 _Randseed
+00A     ok
+00B     empty
+00C-018 s1
+019-01A MAIN.i
+01B-01C MAIN.j
+01D-020 MAIN.analog
+021-095 MAIN.s
+096-09B MAIN.str_temp
+09C-09E MAIN.stt
+09F-0A0 MAIN.ai
+0A1-0A2 MAIN.Xchar
+0A3-0A4 strcat.s1
+0A3-0A6 @DIV3232.P1
+0A3     @delay_ms1.P2
+0A3-0A6 itoa.num
+0A3-0A4 chay_ADC.i
+0A3     MAIN.@SCRATCH1
+0A3     @PSTRINGR_9600_31766_31767.@SCRATCH1
+0A4     MAIN.@SCRATCH2
+0A4     @PSTRINGR_9600_31766_31767.@SCRATCH2
+0A5-0A6 strcat.s2
+0A7-0A8 strcat.s
+0A7     itoa.base
+0A7-0AA @DIV3232.P1
+0A8-0A9 itoa.s
+0A9     strcat.@SCRATCH1
+0AA-0AD itoa.temp
+0AA     strcat.@SCRATCH2
+0AB     strcat.@SCRATCH3
+0AB     @DIV3232.@SCRATCH1
+0AC     @DIV3232.@SCRATCH2
+0AD     @DIV3232.@SCRATCH3
+0AE     itoa.i
+0AE     @DIV3232.@SCRATCH4
+0AF     itoa.sign
+0AF     @DIV3232.@SCRATCH5
+0B0     itoa.cnt
+0B1     itoa.c
+0B2-0B5 @MUL3232.P1
+0B2     itoa.@SCRATCH1
+0B3     itoa.@SCRATCH2
+0B4     itoa.@SCRATCH3
+0B5     itoa.@SCRATCH4
+0B6-0B9 @DIVS3232.P1
+0B6-0B9 @MUL3232.P2
+0B6     itoa.@SCRATCH5
+0B7     itoa.@SCRATCH6
+0B8     itoa.@SCRATCH7
+0B9     itoa.@SCRATCH8
+0BA-0BD @DIVS3232.P1
+0BA     @MUL3232.@SCRATCH1
+0BB     @MUL3232.@SCRATCH2
+0BC     @MUL3232.@SCRATCH3
+0BD     @MUL3232.@SCRATCH4
+0BE     @MUL3232.@SCRATCH5
+0BE     @DIVS3232.@SCRATCH1
+0BF     @MUL3232.@SCRATCH6
+0BF     @DIVS3232.@SCRATCH2
+0C0     @DIVS3232.@SCRATCH3
+0C1     @DIVS3232.@SCRATCH4
+0C2     @DIVS3232.@SCRATCH5
+0C3     @DIVS3232.@SCRATCH6
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0340  strcat
+016C  itoa
+0046  @MUL3232
+009C  @DIVS3232
+0020  @delay_ms1
+0474  MAIN
+03D0  @DIV3232
+044C  @PSTRINGR_9600_31766_31767
+0004  @const482
+03AA  chay_ADC
+0474  @cinit
+0136  StrtoulGO
+0136  StrtolGO
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    E:\PLCPi_RAS\C#\C#\thu vien\code ccs module ADC\ADC_18F4550_FI\
+
+Project Files:
+    ADC_18F4550_RE.c
+    C:\Program Files\PICC\Devices\18f4550.h
+    C:\Program Files\PICC\Drivers\stdlib.h
+    C:\Program Files\PICC\Drivers\stddef.h
+    C:\Program Files\PICC\Drivers\string.h
+    C:\Program Files\PICC\Drivers\ctype.h
+    C:\Program Files\PICC\Drivers\math.h
+
+Units:
+    E:\PLCPi_RAS\C#\C#\thu vien\code ccs module ADC\ADC_18F4550_FI\ADC_18F4550_RE (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      ADC_18F4550_RE.err
+    Ext Symbols: ADC_18F4550_RE.esym
+    INHX32:      ADC_18F4550_RE.hex
+    Symbols:     ADC_18F4550_RE.sym
+    List:        ADC_18F4550_RE.lst
+    Debug/COFF:  ADC_18F4550_RE.cof
+    Project:     ADC_18F4550_RE.PJT
+    Call Tree:   ADC_18F4550_RE.tre
+    Statistics:  ADC_18F4550_RE.sta

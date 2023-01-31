@@ -1,0 +1,38 @@
+Starting (copy all comps)
+Loading merge file F:\PYTHON\PROJECT RASPI_PLC\DI_DO\CONNECT.MAX
+Component J1 copied and renamed to J1000
+Component J2 copied and renamed to J2000
+Component 3 copied and renamed to 3000
+Component 4 copied and renamed to 4000
+Component 5 copied and renamed to 5000
+Component 6 copied and renamed to 6000
+Net 3.3VDC merged into existing net
+Net 5VDC merged into existing net
+Net GND merged into existing net
+Net GPIO2 merged into existing net
+Net GPIO3 merged into existing net
+Net GPIO4 merged into existing net
+Net GPIO9 merged into existing net
+Net GPIO13 merged into existing net
+Net GPIO6 merged into existing net
+Net GPIO5 merged into existing net
+Net GPIO7 merged into existing net
+Net GPIO8 merged into existing net
+Net GPIO10 merged into existing net
+Net GPIO11 merged into existing net
+Net GPIO12 merged into existing net
+Net GPIO14 merged into existing net
+Net GPIO15 merged into existing net
+Net GPIO16 merged into existing net
+Net GPIO17 merged into existing net
+Net GPIO19 merged into existing net
+Net GPIO18 merged into existing net
+Net GPIO20 merged into existing net
+Net GPIO21 merged into existing net
+Net GPIO22 merged into existing net
+Net GPIO23 merged into existing net
+Net GPIO24 merged into existing net
+Net GPIO25 merged into existing net
+Net GPIO26 merged into existing net
+Net GPIO27 merged into existing net
+Complete

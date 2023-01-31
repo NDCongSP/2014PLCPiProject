@@ -1,0 +1,22 @@
+ÀÄADC_18F4550_RE
+   ÀÄMAIN  0/840  Ram=140
+      ÃÄ??0??
+      ÃÄ@delay_ms1  0/38  Ram=1
+      ÃÄitoa  0/468  Ram=23
+      ³  ÃÄ@MUL3232  0/86  Ram=14
+      ³  ÃÄ@DIVS3232  0/208  Ram=14
+      ³  ÀÄ@DIVS3232  0/208  Ram=14
+      ÃÄstrcat  0/106  Ram=9
+      ÃÄstrcat  0/106  Ram=9
+      ÃÄstrcat  0/106  Ram=9
+      ÃÄchay_ADC  0/38  Ram=2
+      ÃÄ@DIV3232  0/124  Ram=13
+      ÃÄitoa  0/468  Ram=23
+      ³  ÃÄ@MUL3232  0/86  Ram=14
+      ³  ÃÄ@DIVS3232  0/208  Ram=14
+      ³  ÀÄ@DIVS3232  0/208  Ram=14
+      ÃÄstrcat  0/106  Ram=9
+      ÃÄstrcat  0/106  Ram=9
+      ÃÄ@PSTRINGR_9600_31766_31767  0/40  Ram=2
+      ÃÄ@const482  0/28  Ram=0
+      ÀÄ@delay_ms1  0/38  Ram=1

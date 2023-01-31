@@ -1,0 +1,88 @@
+AutoECO Report
+FILE-A: F:\PYTHON\PROJECT RASPI_PLC\HARDWARE\DI_DO\DI_DO_BJT\LAYOUT\DIDO_BJT.MAX
+FILE-B: F:\PYTHON\PROJECT RASPI_PLC\HARDWARE\DI_DO\DI_DO_BJT\SCHEMATICS\DIDO.MNL
+If "*EOF*" immediately follows, no changes were made
+Adding net F0
+Adding net F1
+Adding net F2
+Adding net F3
+Adding net F4
+Adding net F5
+Adding net F6
+Adding net F7
+Adding net F8
+Adding net F9
+Adding net F10
+Adding net F11
+Adding net F12
+Adding net F13
+Adding net F14
+Adding net F15
+Deleting U4.1 from net R0
+Deleting ISO9.3 from net R0
+Deleting U4.2 from net R1
+Deleting ISO10.3 from net R1
+Deleting U4.3 from net R2
+Deleting ISO11.3 from net R2
+Deleting U4.4 from net R3
+Deleting ISO12.3 from net R3
+Deleting U4.5 from net R4
+Deleting ISO13.3 from net R4
+Deleting ISO14.3 from net R5
+Deleting U4.6 from net R5
+Deleting U4.7 from net R6
+Deleting ISO15.3 from net R6
+Deleting U4.8 from net R7
+Deleting ISO16.3 from net R7
+Deleting U5.1 from net R8
+Deleting ISO17.3 from net R8
+Deleting U5.2 from net R9
+Deleting ISO18.3 from net R9
+Deleting U5.3 from net R10
+Deleting ISO19.3 from net R10
+Deleting U5.4 from net R11
+Deleting ISO20.3 from net R11
+Deleting U5.5 from net R12
+Deleting ISO21.3 from net R12
+Deleting U5.6 from net R13
+Deleting ISO22.3 from net R13
+Deleting U5.7 from net R14
+Deleting ISO23.3 from net R14
+Deleting U5.8 from net R15
+Deleting ISO24.3 from net R15
+Adding ISO9.3 to net F0
+Adding U4.1 to net F0
+Adding ISO10.3 to net F1
+Adding U4.2 to net F1
+Adding ISO11.3 to net F2
+Adding U4.3 to net F2
+Adding ISO12.3 to net F3
+Adding U4.4 to net F3
+Adding ISO13.3 to net F4
+Adding U4.5 to net F4
+Adding ISO14.3 to net F5
+Adding U4.6 to net F5
+Adding ISO15.3 to net F6
+Adding U4.7 to net F6
+Adding ISO16.3 to net F7
+Adding U4.8 to net F7
+Adding U5.1 to net F8
+Adding ISO17.3 to net F8
+Adding ISO18.3 to net F9
+Adding U5.2 to net F9
+Adding U5.3 to net F10
+Adding ISO19.3 to net F10
+Adding ISO20.3 to net F11
+Adding U5.4 to net F11
+Adding U5.5 to net F12
+Adding ISO21.3 to net F12
+Adding U5.6 to net F13
+Adding ISO22.3 to net F13
+Adding U5.7 to net F14
+Adding ISO23.3 to net F14
+Adding U5.8 to net F15
+Adding ISO24.3 to net F15
+Deleting component 125
+Deleting component 124
+*EOF*
+No errors found

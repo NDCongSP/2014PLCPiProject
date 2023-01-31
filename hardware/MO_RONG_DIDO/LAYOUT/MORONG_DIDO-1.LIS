@@ -1,0 +1,48 @@
+AutoECO Report
+FILE-A: F:\PYTHON\PROJECT RASPI_PLC\HARDWARE\MO_RONG_DIDO\LAYOUT\MORONG_DIDO.MAX
+FILE-B: F:\PYTHON\PROJECT RASPI_PLC\HARDWARE\MO_RONG_DIDO\SCHEMATICS\DIDO.MNL
+If "*EOF*" immediately follows, no changes were made
+Net I5 renamed to G5
+Adding net G10
+Adding net G14
+Net I9 renamed to G9
+Net I0 renamed to G0
+Adding net G11
+Net I1 renamed to G1
+Net I8 renamed to G8
+Net I6 renamed to G6
+Adding net G13
+Net I2 renamed to G2
+Net I4 renamed to G4
+Net I7 renamed to G7
+Adding net G12
+Net I3 renamed to G3
+Adding net G15
+Deleting J13.1 from net I10
+Deleting R62.1 from net I10
+Deleting J13.2 from net I11
+Deleting R63.1 from net I11
+Deleting J13.3 from net I12
+Deleting R64.1 from net I12
+Deleting R65.1 from net I13
+Deleting J14.1 from net I13
+Deleting R66.1 from net I14
+Deleting J14.2 from net I14
+Deleting J14.3 from net I15
+Deleting R67.1 from net I15
+Adding J13.1 to net G10
+Adding R62.1 to net G10
+Adding R66.1 to net G14
+Adding J14.2 to net G14
+Adding J13.2 to net G11
+Adding R63.1 to net G11
+Adding R65.1 to net G13
+Adding J14.1 to net G13
+Adding R64.1 to net G12
+Adding J13.3 to net G12
+Adding R67.1 to net G15
+Adding J14.3 to net G15
+Deleting component 174
+Deleting component 173
+*EOF*
+No errors found

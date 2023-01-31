@@ -1,0 +1,56 @@
+
+ROM used: 1980 (6%)
+          1980 (6%) including unused fragments
+
+          0 Average locations per line
+          3 Average locations per statement
+
+RAM used: 165 (8%) at main() level
+          196 (10%) worst case
+
+Stack used: 2 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   92    56   8  ADC_18F4550_RE.c
+  451     0   0  C:\Program Files\PICC\Devices\18f4550.h
+ 1273   359  53  C:\Program Files\PICC\Drivers\stdlib.h
+   28     0   0  C:\Program Files\PICC\Drivers\stddef.h
+  409     0   0  C:\Program Files\PICC\Drivers\string.h
+   28     0   0  C:\Program Files\PICC\Drivers\ctype.h
+ 2172   260  39  C:\Program Files\PICC\Drivers\math.h
+----- -----
+ 4453   675 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0    106   3   9   272  5.5  strcat
+0    468  12  23  1068 11.1  itoa
+0     86   2  14             @MUL3232
+0    208   5  14             @DIVS3232
+0     38   1   1             @delay_ms1
+0    840  21 140  2250 11.4  MAIN
+0    124   3  13             @DIV3232
+0     40   1   2             @PSTRINGR_9600_31766_31767
+0     28   1   0             @const482
+0     38   1   2    42  1.1  chay_ADC
+
+Program metrics:
+    Functions               4
+    Statements              675
+    Comments                881
+    Volume (V)              4427
+    Difficilty (D)          28.4
+    Effort to implement (E) 125733
+    Time to implement (T)   1 hours, 56 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   19
+    Maintainability (MI)    8
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE  1976  30788  
+
+
+

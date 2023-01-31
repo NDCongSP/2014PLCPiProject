@@ -1,0 +1,17 @@
+
+Checking Pins and Pin Connections
+
+--------------------------------------------------
+Checking Schematic: SCHEMATIC1
+--------------------------------------------------
+Checking Electrical Rules 
+ERROR:  [DRC0004]  Possible pin type conflict U1,Y\ Output Connected to Output
+                    SCHEMATIC1, PAGE1  (5.90, 5.20) 
+
+Checking for Unconnected Nets
+
+Checking for Invalid References
+
+Checking for Duplicate References
+
+Check Bus width mismatch

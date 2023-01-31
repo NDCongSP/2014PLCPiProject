@@ -1,0 +1,40 @@
+AutoECO Report
+FILE-A: F:\PYTHON\PROJECT RASPI_PLC\DI_DO\CONNECT.MAX
+FILE-B: F:\PYTHON\PROJECT RASPI_PLC\DI_DO\CONNECT.MNL
+If "*EOF*" immediately follows, no changes were made
+Adding package CONN_PCB_15X2-P
+Adding component J1
+Found footprint JTAG 30 from PRT file for part CONN_PCB_15X2-P, comp J1
+Adding component J2
+Adding net 3.3VDC
+Adding net 5VDC
+Adding net GND
+Adding net GPIO2
+Adding net GPIO3
+Adding net GPIO4
+Adding net GPIO9
+Adding net GPIO13
+Adding net GPIO6
+Adding net GPIO5
+Adding net GPIO7
+Adding net GPIO8
+Adding net GPIO10
+Adding net GPIO11
+Adding net GPIO12
+Adding net GPIO14
+Adding net GPIO15
+Adding net GPIO16
+Adding net GPIO17
+Adding net GPIO19
+Adding net GPIO18
+Adding net GPIO20
+Adding net GPIO21
+Adding net GPIO22
+Adding net GPIO23
+Adding net GPIO24
+Adding net GPIO25
+Adding net GPIO26
+Adding net GPIO27
+Deleting net DEFAULT
+*EOF*
+No errors found

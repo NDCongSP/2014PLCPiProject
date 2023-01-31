@@ -1,0 +1,77 @@
+(ExpressProject "adc_44pin"
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File "C:\Users\Administrator\Desktop\LIBRARY1.OLB"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File ".\adc_44pin.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (DRC_Scope "0")
+    (DRC_Action "0")
+    (DRC_Create_Warnings "TRUE")
+    (DRC_Check_Ports "FALSE")
+    (DRC_Check_Off-Page_Connectors "FALSE")
+    (DRC_Identical_References "TRUE")
+    (DRC_Type_Mismatch "TRUE")
+    (DRC_Report_Ports_and_Off-page_Connectors "FALSE")
+    (DRC_SDT_Compatibility "FALSE")
+    (DRC_Report_Off-grid_Objects "FALSE")
+    (DRC_Check_Unconnected_Nets "TRUE")
+    (DRC_Check_for_Misleading_TAP "FALSE")
+    (DRC_Visible_Power_pins "FALSE")
+    (DRC_Report_Netnames "FALSE")
+    (DRC_View_Output "FALSE")
+    (DRC_Report_File
+       "F:\python\Project RasPi_PLC\hardware\adc_44pin\ADC_44PIN.DRC")
+    (Netlist_TAB "3")
+    (LAYOUT_Netlist_File "ADC_44PIN.MNL")
+    (LAYOUT_PCB_Footprint "{PCB Footprint}")
+    (TRUE)
+    (LAYOUT_Units "0"))
+  (Folder "Outputs"
+    (File ".\adc_44pin.drc"
+      (Type "Report"))
+    (File ".\adc_44pin.mnl"
+      (Type "LAYOUT Netlist File")))
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    (PIC18F4550( smd) XXX
+    (FullPartName "PIC18F4550(smd)XXX.Normal")
+    (LibraryName "C:\USERS\ADMINISTRATOR\DESKTOP\LIBRARY1.OLB")
+    (DeviceIndex "0"))
+  (PIC18F4550( smd)
+  (FullPartName "PIC18F4550(smd).Normal")
+  (LibraryName "C:\USERS\ADMINISTRATOR\DESKTOP\LIBRARY1.OLB")
+  (DeviceIndex "0")
+  (MPSSessionName "NDCONG")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "D:\cty\PLCPi Project\hardware\adc_44pin\adc_44pin.dsn")
+      (Path "Design Resources"
+         "D:\cty\PLCPi Project\hardware\adc_44pin\adc_44pin.dsn" "SCHEMATIC1")
+      (Path "Outputs")
+      (Select "Design Resources"
+         "D:\cty\PLCPi Project\hardware\adc_44pin\adc_44pin.dsn" "SCHEMATIC1"
+         "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 0 200 0 395"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -8 -30 50 1212 50 479")
+        (Scroll "211 487")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path "D:\CTY\PLCPI PROJECT\HARDWARE\ADC_44PIN\ADC_44PIN.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))))
