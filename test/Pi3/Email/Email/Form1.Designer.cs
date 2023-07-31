@@ -63,6 +63,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(299, 41);
             this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "ndcong08cddv02@gmail.com";
             // 
             // SendButton
             // 
@@ -82,6 +83,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(299, 84);
             this.textBox2.TabIndex = 3;
+            this.textBox2.Text = "TEST";
             // 
             // label2
             // 
@@ -134,6 +136,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(299, 30);
             this.textBox3.TabIndex = 36;
+            this.textBox3.Text = "giamsat.canhbao@gmail.com";
             // 
             // label4
             // 
@@ -152,6 +155,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(299, 31);
             this.textBox4.TabIndex = 38;
+            this.textBox4.Text = "ujgknqghwcjqxfvq";
             // 
             // label5
             // 

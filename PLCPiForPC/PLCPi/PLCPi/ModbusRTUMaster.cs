@@ -165,6 +165,22 @@ namespace PLCPiProject
             message[message.Length - 1] = CRC[1];
 
         }
+
+        private void BuildMessageSingleRegister(byte address, byte type, ushort start, ref byte[] message)
+        {
+            //Array to receive CRC bytes:
+            byte[] CRC = new byte[2];
+
+            message[0] = address;
+            message[1] = type;
+            message[2] = (byte)(start >> 8);
+            message[3] = (byte)start;
+
+            GetCRC(message, ref CRC);
+            message[message.Length - 2] = CRC[0];
+            message[message.Length - 1] = CRC[1];
+
+        }
         #endregion
 
         #region Check Response
@@ -190,6 +206,74 @@ namespace PLCPiProject
             {
                 response[i] = (byte)(sp.ReadByte());
             }
+        }
+        #endregion
+
+        #region Function 16 - Write Multiple Registers
+        /// <summary>
+        /// Ghi giá trị xuống 1 thanh ghi holding.
+        /// </summary>
+        /// <param name="address">ID của Slave.</param>
+        /// <param name="start">Vị trí thanh ghi bắt đầu ghi.</param>
+        /// <param name="registers">Số thanh ghi muốn ghi.</param>
+        /// <param name="values">Mảng kiểu byte chứa giá trị để ghi xuống holding register.</param>
+        /// <returns>Trả về trạng thái kiểu bool, nếu true là thành công, false thất bại.</returns>
+        public bool WriteHoldingRegister(byte address, ushort start, byte[] values)
+        {
+            try
+            {
+                //Ensure port is open:
+                if (sp.IsOpen)
+                {
+                    //Clear in/out buffers:
+                    sp.DiscardOutBuffer();
+                    sp.DiscardInBuffer();
+                    //Message is 1 addr + 1 fcn + 2 start + 2 reg + 1 count + 2 * reg vals + 2 CRC
+                    byte[] message = new byte[8]; //02 06 00 08 00 01 + 2byte CRC  =10byte
+                    //Function 16 response is fixed at 8 bytes
+                    byte[] response = new byte[8];
+
+                    //Add bytecount to message:
+                    //message[6] = (byte)(registers * 2);
+                    //Put write values into message prior to sending:
+
+
+                    message[4] = values[0];
+                    message[5] = values[1];
+
+                    //Build outgoing message:
+                    BuildMessageSingleRegister(address, (byte)06, start, ref message);
+
+                    //Send Modbus message to Serial Port:
+                    try
+                    {
+                        sp.Write(message, 0, message.Length);
+                        GetResponse(ref response);
+                    }
+                    catch (Exception err)
+                    {
+                        modbusStatus = "Error in write event: " + err.Message;
+                        return false;
+                    }
+                    //Evaluate message:
+                    if (CheckResponse(response))
+                    {
+                        modbusStatus = "Good";
+                        return true;
+                    }
+                    else
+                    {
+                        modbusStatus = "CRC error";
+                        return false;
+                    }
+                }
+                else
+                {
+                    modbusStatus = "Serial port not open";
+                    return false;
+                }
+            }
+            catch { return false; }
         }
         #endregion
 

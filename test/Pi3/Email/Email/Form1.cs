@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using PLCPiProject;
+using System.Diagnostics;
 
 namespace Email
 {
@@ -31,25 +32,33 @@ namespace Email
         {
             try
             {
-                myPLC.Email.CredentialEmail = "giamsat.canhbao@gmail.com";
-                myPLC.Email.CredentialPass = "ujgknqghwcjqxfvq";
+                myPLC.Email.CredentialEmail = textBox3.Text;// "giamsat.canhbao@gmail.com";
+                myPLC.Email.CredentialPass = textBox4.Text;// "ujgknqghwcjqxfvq";
                 myPLC.Email.Port = 587;
 
                 myPLC.Email.emailTo = textBox1.Text;
-                myPLC.Email.subjectEmail = "TEST EMAIL.";
 
-                Console.WriteLine($"EMAIL {textBox2.Text}");
-                myPLC.Email.bodyEmail = textBox2.Text;
-                //myPLC.Email.TimeOut = 1000;
+                myPLC.Email.subjectEmail = "Alarm";
+                //string strAlarm = "Location : " + location.Name + Environment.NewLine
+                //     + "Alarm: " + alarm + Environment.NewLine
+                //     + "Value: " + location.Value + Environment.NewLine
+                //     + "Low Level: " + (location.LowLevel.HasValue ? location.LowLevel.Value.ToString() : "") + Environment.NewLine
+                //     + "High Level: " + (location.HighLevel.HasValue ? location.HighLevel.Value.ToString() : "");
+                string strAlarm = $"{DateTime.Now} - TEST EMAIL.";
+                Debug.WriteLine($"EMAIL {strAlarm}");
+                myPLC.Email.bodyEmail = strAlarm;
+
                 myPLC.Email.SendEmail();
+
                 if (myPLC.Email.Error == false)
                 {
-                    label3.Text = "Gui Email Good";
+                    Console.WriteLine($"Gui Email Good");
                 }
                 else
                 {
-                    label3.Text = "Gui Email Bad";
+                    Console.WriteLine($"Gui Email Fail");
                 }
+
 
                 //myPLC.CredentialEmail = "giamsat.canhbao@gmail.com";
                 //myPLC.CredentialPass = "ujgknqghwcjqxfvq";
