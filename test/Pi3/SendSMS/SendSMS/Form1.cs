@@ -26,8 +26,8 @@ namespace SendSMS
 
         //Tao doi tuong myPLC
         //static PLCPi myPLCpi = new PLCPi();
-        static string _path = $"D:\\ATPro\\CodeProject\\GatewayPi\\WeblogMVC\\SourceCode\\";
-        //static string _path = $"/home/pi/";
+        //static string _path = $"D:\\ATPro\\CodeProject\\GatewayPi\\WeblogMVC\\SourceCode\\";
+        static string _path = $"/home/pi/";
         static string SMSString = "", ServerIpAddress = "", noiDung = "";
         static string ConnectionString = "";
         static DataTable bangSMS = new DataTable();
@@ -43,13 +43,13 @@ namespace SendSMS
             string[] prams = temp.Split(',');
             ServerIpAddress = prams[4].Trim();
 
-            Debug.WriteLine($"EnableSMS/EnableEmail/LogType/LogRate/ServerIp: {temp}");
+            Console.WriteLine($"EnableSMS/EnableEmail/LogType/LogRate/ServerIp: {temp}");
             ConnectionString = $"user id=root;password=100100;database=gateway;server={ServerIpAddress};convertzerodatetime=True;port=3306";
 
             SMSString = ReadText(_path + "sms.txt").Trim();
-            Debug.WriteLine($"{ConnectionString}|SDT {SMSString}");
+            Console.WriteLine($"{ConnectionString}|SDT {SMSString}");
 
- 
+            //this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -70,14 +70,14 @@ namespace SendSMS
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Enabled = false;
-            //Debug.WriteLine($"tong sdt nhan SMS {textBox1.Text.Trim().Split(',').Length}");
-            //Debug.WriteLine($"SDT {textBox1.Text}");
+            //Console.WriteLine($"tong sdt nhan SMS {textBox1.Text.Trim().Split(',').Length}");
+            //Console.WriteLine($"SDT {textBox1.Text}");
             //string noidung = $"{DateTime.Now}\nLocation: 1\nAlarm: Alarm\nValue: 15.5" +
             //        $"\nLow Level: 10" +
             //        $"\nHigh Level: 2";
             ////for (int i = 0; i < textBox1.Text.Trim().Split(',').Length; i++)
             //{
-            //    Debug.WriteLine(myPLC.SMS.GuiSMS(textBox1.Text.Trim(), noidung));
+            //    Console.WriteLine(myPLC.SMS.GuiSMS(textBox1.Text.Trim(), noidung));
             //    //Thread.Sleep(2000);
             //}
 
@@ -90,11 +90,11 @@ namespace SendSMS
                     noiDung = $"{DateTime.Now}\nLocation: {bangSMS.Rows[i][1].ToString()}\nAlarm: {bangSMS.Rows[i][2].ToString()}\nValue: {bangSMS.Rows[i][3].ToString()}" +
                  $"\nLow Level: {bangSMS.Rows[i][4].ToString()}" +
                  $"\nHigh Level: {bangSMS.Rows[i][5].ToString()}";
-                    Debug.WriteLine($"noi dung sms\n{noiDung}");
+                    Console.WriteLine($"noi dung sms\n{noiDung}");
                     if (myPLC.SMS.GuiSMS(textBox1.Text.Trim(), noiDung) == "Good")
                     {
                         SetSMS(Convert.ToInt16(bangSMS.Rows[i][0].ToString()));
-                        Debug.WriteLine($"gui SMS thanh cong");
+                        Console.WriteLine($"gui SMS thanh cong");
                     }
 
                 }
@@ -105,17 +105,17 @@ namespace SendSMS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Debug.WriteLine($"tong sdt nhan SMS {textBox1.Text.Trim().Split(',').Length}");
-            //Debug.WriteLine($"SDT {textBox1.Text}");
-            //string noidung = $"{DateTime.Now}\nLocation: 1\nAlarm: Alarm\nValue: 15.5" +
-            //        $"\nLow Level: 10" +
-            //        $"\nHigh Level: 2";
-            ////for (int i = 0; i < textBox1.Text.Trim().Split(',').Length; i++)
-            //{
-            //    Debug.WriteLine(myPLC.SMS.GuiSMS(textBox1.Text.Trim(), noidung));
-            //    //Thread.Sleep(2000);
-            //}
-            timer1.Enabled = true;
+            Console.WriteLine($"tong sdt nhan SMS {textBox1.Text.Trim().Split(',').Length}");
+            Console.WriteLine($"SDT {textBox1.Text}");
+            string noidung = $"{DateTime.Now}\nLocation: 1\nAlarm: Alarm\nValue: 15.5" +
+                    $"\nLow Level: 10" +
+                    $"\nHigh Level: 2";
+            //for (int i = 0; i < textBox1.Text.Trim().Split(',').Length; i++)
+            {
+                Console.WriteLine(myPLC.SMS.GuiSMS(textBox1.Text.Trim(), noidung));
+                //Thread.Sleep(2000);
+            }
+            // timer1.Enabled = true;
         }
 
         static string ReadText(string PathFile)
