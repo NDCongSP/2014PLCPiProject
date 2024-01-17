@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=auto3g
+Comment= Chay root desktop
+Exec= lxterminal --command "sudo wvdial 3gconnect"
+Icon=/usr/share/pixmaps/dillo.xpm
+Type=Application
+Encoding=UTF-8
+Terminal=false
+Categories=None;

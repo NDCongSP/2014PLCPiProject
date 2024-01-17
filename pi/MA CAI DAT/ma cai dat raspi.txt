@@ -1,0 +1,100 @@
+sudo raspi-config
+
+sudo passwd
+sudo apt-get install xrdp
+
+sudo apt-get update
+sudo apt-get upgrade
+
+//////////////////
+cai offic cho raspi
+
+sudo apt-get install libreoffice
+////////////////////////////////////////
+//sua loi
+sudo apt-get install python2.7-dev : sua loi 'gcc'
+sudo dpkg --configure -a
+////////////////////////////////
+tat screen sleep
+
+nano /etc/xdg/lxsession/LXDE-pi/autostart
+
+@xset s off
+@xset -dpms
+@xset s noblank
+
+reboot
+
+xset -q  #chay tren desktop
+////////////////////////////////////////
+xoa 1 ung dung da cai dat:
+sudo apt-get remove <package-name>
+
+lenh xoa port:
+sudo fuser -k 502/tcp
+////cai dat de gui gmail
+certmgr -ssl smtps://smtp.gmail.com:465
+/////////////////////////////////////////
+//cai dat de tu nhan HDMI
+sudo nano /boot/config.txt 
+////////
+
+sudo passwd root     : thay doi mat khau root
+
+sudo nano /etc/network/interfaces
+address 192.168.1.10
+netmask 255.255.255.0
+network 192.168.1.0
+broadcast 192.168.1.255
+gateway 192.168.1.1
+
+sudo /etc/init.d/networking restart
+
+2. cai dat cac thu vien:
+	sudo python setup.py install
+duong dan toi cac thu vien:
+	cd gpio/setuptools-14.3.1
+	cd gpio/Twisted-15.0.0
+	cd gpio/RPi.GPIO-0.5.11
+	cd gpio/Pillow-2.7.0
+//ngang pillow
+	cd gpio/pyasn1-0.1.7
+	cd gpio/pycrypto-2.6.1
+	cd gpio/pymodbus-1.1.0
+
+3. cai dat i2c ds1307:
+	sudo apt-get install python-smbus
+	#sudo apt-get install i2c-tools
+
+	sudo nano /etc/modprobe.d/raspi-blacklist.conf
+
+		#blacklist spi-bcm2708
+		#blacklist i2c-bcm2708
+	sudo nano /etc/modules
+		i2c-dev
+		i2c-bcm2708
+		rtc-ds1307
+
+	sudo adduser root i2c
+	sudo adduser pi i2c
+	
+	sudo nano /etc/rc.local
+		echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-1/new_device
+		sudo hwclock -s
+
+4.tu dong chay cac chuong trinh khi boot:
+	sudo crontab -e
+		@reboot python /home/pi/donghodongbo/clock.py & 
+		@reboot python /home/pi/on_off.py &
+
+ sudo nano /media/Port_Num.txt
+
+ sudo reboot
+
+5. kiem tra xem da nhan i2c chua
+	sudo i2cdetect -y 1
+	sudo hwclock -r
+	sudo hwclock -w : ghi thoi gian tu he thong xuong i2c
+
+lenh thay doi thoi gian he thong:
+	sudo date -s"01 NOV 2015 23:59:30"

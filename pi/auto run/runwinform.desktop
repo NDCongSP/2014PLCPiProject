@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=runwinform
+Comment= Chay root desktop
+Exec= lxterminal --command "sudo mono /root/Desktop/Debug/Winform_HMI_PLCPi_App1.exe"
+Icon=/usr/share/pixmaps/dillo.xpm
+Type=Application
+Encoding=UTF-8
+Terminal=false
+Categories=None;

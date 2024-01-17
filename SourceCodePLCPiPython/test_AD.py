@@ -1,0 +1,10 @@
+Y0 = input('Y0 = ')
+Y1 = input('Y1 = ')
+X0 = input('X0 = ')
+X1 = input('X1 = ')
+x =  input('x = ')
+A = (Y1 - Y0)/(X1 - X0)
+B = Y1 - (((Y1 - Y0)/(X1 - X0))*X1)
+y = A*x + B
+print('a = %f , b = %f'%(A,B))
+print('gia tri y =%f'%y)

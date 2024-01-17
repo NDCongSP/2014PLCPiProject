@@ -1,0 +1,15 @@
+tu dong dang nhap vao desktop voi tai khoan root
+
+sudo nano /etc/inittab
+
+command dong 1:2345:respawn:/sbin/getty 115200 tty1
+
+thay bang dong
+1:2345:respawn:/bin/login -f root tty1 </dev/tty1 >/dev/tty1 2>&1
+ luu lai
+
+chinh sua file rc.local
+
+sudo nano /etc/rc.local
+
+	su -l root -c startx

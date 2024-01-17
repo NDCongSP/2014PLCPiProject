@@ -1,0 +1,24 @@
+
+
+sudo mkdir ./bin
+
+cd ./bin
+
+sudo nano script_auto_run
+
+	sudo python /home/pi/donghodongbo/clock.py &
+
+	sudo python /home/pi/on_off.py &
+
+
+
+
+sudo chmod 755 script_auto_run
+
+
+sudo nano /etc/rc.local
+
+/home/pi/bin/script_auto_run
+
+/root/bin/script_auto_run
+

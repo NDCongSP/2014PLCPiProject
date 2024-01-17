@@ -1,0 +1,6 @@
+chup:  raspistill -o tenanh.jpg
+Full screen: raspistill -f -o tenanh.jpg
+hen gio chup: raspistill –t thoigian(ms) -o tenanh.jpg
+
+Quay video: raspivid -o tenvideo.h264
+Quay theo thoi gian quy dinh: raspivid –t thoigian(ms)-o tenvideo.h264

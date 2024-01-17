@@ -1,0 +1,17 @@
+[Desktop Entry]
+
+Name= runserver
+
+Comment= Chay server
+
+Exec=epiphany-browser http://192.168.1.34:9000/
+
+Icon=/usr/share/pixmaps/dillo.xpm
+
+Type=Application
+
+Encoding=UTF-8
+
+Terminal=false
+
+Categories=None;

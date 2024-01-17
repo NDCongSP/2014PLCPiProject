@@ -1,0 +1,1 @@
+chep tat ca cac file va folder cua code web vao /home/pi

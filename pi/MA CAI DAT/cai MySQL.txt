@@ -1,0 +1,24 @@
+1.cai mysql server
+sudo apt-get install mysql-server
+cai mat khau la 100100
+
+2.dang nhap vao mysql de thuc hien lenh
+mysql -p -u root 
+
+nhap mat khau "100100"
+
+3. tao database:
+CREATE DATABASE B_PLCPi;
+
+4. cai dat de truy cap tu xa
+
+chinh sua file duoi:
+sudo nano /etc/mysql/my.cnf
+(tim den cho co "127.0.0.1" sua lai thanh "0.0.0.0")
+
+khoi dong lai mysql
+sudo service mysql restart
+
+GRANT ALL PRIVILEGES ON DB_PLCPi.* TO 'root'@'%' IDENTIFIED BY '100100';
+
+flush privileges;

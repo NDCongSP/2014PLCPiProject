@@ -1,0 +1,245 @@
+1.cau hinh ban dau
+sudo raspi-config
+------------------------------------------------------------------------------------------------------------
+2.thay doi mat khau root
+sudo passwd
+	nhap pass la: 100100
+
+chinh su file sshd_config de putty vao tk root
+
+sudo nano /etc/ssh/sshd_config
+	tim dong "PermitRootLogin without-password" sua lai thanh "PermitRootLogin yes" roi luu lai
+service ssh restart
+------------------------------------------------------------------------------------------------------------
+3.update
+ sudo apt-get update --allow-releaseinfo-change
+sudo apt-get full-upgrade
+sudo apt-get update
+------------------------------------------------------------------------------------------------------------
+4.
+sudo apt-get install apt-transport-https -y
+-------------------------------------------------------------------
+5.cai dat remort desktop
+sudo apt-get install tightvncserver -y
+sudo apt-get install xrdp -y
+
+khoi dong lai
+sudo reboot
+----------------------------------------------------------------------
+6. upgrade
+sudo apt-get full-upgrade
+sudo apt-get upgrade -y
+
+chay 1 luc se hien len yeu cau, khi do bam phim "q", se chay tiep
+chayj 1 luc sau hien len them yeu cau, bam phim "n", se chay tiep den khi xong
+------------------------------------------------------------------------------------------------------------
+7. reboot
+------------------------------------------------------------------------------------------------------------
+8. cai dat xsp4
+sudo apt-get install mono-xsp4 -y
+------------------------------------------------------------------------------------------------------------
+9.cai dat mono
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+
+echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
+
+echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
+
+sudo apt-get update
+sudo apt-get upgrade -y
+
+sudo apt-get install mono-devel -y
+sudo apt-get install mono-complete -y
+------------------------------------------------------------------------------------------------------------
+10.cai dat ds18b20 & tu nhan HDMI
+sudo nano /etc/modules
+
+them 2 dong sau vao roi luu lai
+w1-gpio
+w1-therm
+
+chinh sua chan da ta cho chuan 1-w:
+sudo nano /boot/config.txt
+
+them 2 dong duoi vao
+# 1-wire settings
+dtoverlay=w1-gpio,gpiopin=4
+
+bo command dong "hdmi_force_hotplug=1" 
+
+luu lai
+------------------------------------------------------------------------------------------------------------
+11.cai dat sht10
+b1. neu cai python2 roi thi go ra : sudo apt-get autoremove
+b2. cai python 3: sudo apt-get install python3
+b3.cai dat sht10 : pip3 install pi-sht1x
+b4. copy thu muc pi-dht1x vao duong dan usr/local/lip/python3.x..(luu ý neu cai ko tu copy thi lam tay)
+luu ý khi chay ct python dung python 3
+------------------------------------------------------------------------------------------------------------
+12.cai dat led status
+sudo crontab -e
+@reboot python /media/TatDO_Status/tatDO.py
+------------------------------------------------------------------------------------------------------------
+13.cai dat serial
+sudo nano /boot/cmdline.txt
+	hien ra 1 dong thong tin. trong do co "console=serial0,115200"
+	ta xoa doan nay di. roi luu lai
+
+sudo nano /boot/config.txt
+	them dong ben duoi vao cuoi cung, roi luu lai
+
+	dtoverlay=pi3-miniuart-bt
+------------------------------------------------------------------------------------------------------------
+14.
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+15.bat i2c
+sudo raspi-config
+chon muc so 5(interfaces option)/ chon i2c enable len
+------------------------------------------------------------------------------------------------------------
+16.reboot
+------------------------------------------------------------------------------------------------------------
+17.cai dat i2c
+-chay lenh duoi
+sudo apt-get install python-smbus -y
+
+-chinh su file config
+sudo nano /boot/config.txt
+
+-them dong sau vao duoi cung roi luu lai
+dtoverlay=i2c-rtc,ds1307
+
+- khoi dong lai
+ reboot
+-kiem tra 
+sudo i2cdetect -y 1
+
+-chay lan luot cac dong lenh sau
+sudo apt-get -y remove fake-hwclock
+sudo update-rc.d -f fake-hwclock remove
+
+-chinh sua lai file sau
+sudo nano /lib/udev/hwclock-set
+
+ comment cac dong duoi roi luu lai:
+ "#if [ -e /run/systemd/system ] ; then
+# exit 0
+#fi"
+
+-chay dong lenh sau:
+sudo hwclock -D -r
+------------------------------------------------------------------------------------------------------------
+18.cai dat usb 3g
+
+sudo apt-get install ppp usb-modeswitch wvdial -y
+
+chinh sua file wvdial.con1
+
+sudo nano /etc/wvdial.conf
+
+xoa het, roi copy doan duoi dan vao roi luu lai
+
+[Dialer Defaults]
+Init1 = ATZ
+Init2 = ATE1
+Init3 = AT+CGDCONT=1,"IP","v-internet"
+Stupid Mode = 1
+Modem Type = Analog Modem
+ISDN = 0
+Phone = *99#
+Modem = /dev/ttyUSB0
+Username = { }
+Password = { }
+Baud = 460800
+------------------------------------------------------------------------------------------------------------
+19.cai dat gui email
+certmgr -ssl smtps://smtp.gmail.com:465
+------------------------------------------------------------------------------------------------------------
+20.cai dat mysql
+sudo apt install mariadb-server
+https://quantrimang.com/cau-hinh-mysql-server-tren-pi-175797
+
+sudo apt-get install mysql-server -y
+
+neu lenh tren ko dc thi dung lenh duoi
+sudo apt-get install mysql-server --force-yes
+
+ch?nh l?i ch? này thì client m?i remote vào du?c:
+chinh sua file my.cnf:
+	sudo nano /etc/mysql/my.cnf			mariadb: /etc/mysql/mariadb.conf.d/50-server.cnf
+		doi 127.0.0.1 thah 0.0.0.0
+	
+
+sudo service mysql restart
+
+cai dat public MySQL, copy tung dong duoi dan vao roi enter lan luot tung dong
+
+mysql -p -u root
+	nhap pass la 100100
+
+	GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '100100';
+	flush privileges;
+	exit;
+------------------------------------------------------------------------------------------------------------
+21.restores databases mac dinh cua PLCPi vao con pi
+dung cong su MySQL Workben tren may tinh ket noi vao roi import database vao
+dat ten co so du lieu laf "DB_PLCPi"
+------------------------------------------------------------------------------------------------------------
+22. cai dat ip mac dinh
+chinh su file: 
+sudo nano /etc/dhcpcd.conf
+
+them doan sau vao duoi cung:
+
+interface eth0
+
+static ip_address=192.168.1.10/24
+static routers=192.168.1.1
+static domain_name_servers=8.8.8.8 8.8.4.4
+
+interface wlan0
+
+static ip_address=192.168.1.11/24
+static routers=192.168.1.1
+static domain_name_servers=8.8.8.8 8.8.4.4
+------------------------------------------------------------------------------------------------------------
+23.Doi DNS 
+sudo nano /etc/resolv.conf
+
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+------------------------------------------------------------------------------------------------------------
+24.tat screen sleep
+
+sudo nano /etc/lightdm/lightdm.conf
+
+Add the following lines to the [SeatDefaults] section:
+them 2 dong duoi vao duoi dong nay [SeatDefaults] roi luu lai
+
+# don't sleep the screen
+xserver-command=X -s 0 dpms
+
+reboot
+------------------------------------------------------------------------------------------------------------
+cai xong he dieu hanh va cac phan mem cho PCLCPi (s) dung raspberry pi 3
+tong cong co 24 buoc de cai xong he dieu hanh cho PLCPi
+------------------------------------------------------------------------------------------------------------
+
+xoa mysql
+apt-get remove --purge 'mysql-.*' hoac apt-get remove --purge 'mysql-server.*'
+
+xem cac chuong trinh dang chay
+ps aux | less
+
+-cai xscreensaver
+sudo apt-get xscreensaver
+-remove xscreensaver
+sudo apt-get remove xscreensaver -y
+
+-remove the following packages : xrdp, vnc4server, tightvncserver
+
+
+- cai dat sudo apt-get remove xrdp vnc4server tightvncserver -y
+
+-cai dat wifi
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf

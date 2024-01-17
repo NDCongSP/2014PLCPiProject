@@ -1,0 +1,42 @@
+sudo hwclock -w
+
+sudo crontab -e
+
+sudo reboot
+
+sudo mkdir ./bin
+
+cd ./bin
+
+sudo nano script_auto_run
+
+sudo python /home/pi/donghodongbo/clock.py &
+
+sudo python /home/pi/on_off.py &
+sudo python /home/pi/Newfolder/clock.py &
+
+sudo mono /root/Desktop/Debug/BoDem.exe
+sudo mono /root/Desktop/BoDem/BoDem/bin/Debug/BoDem.exe
+
+
+
+sudo python /media/on_off.py &
+
+sudo chmod 755 script_auto_run
+
+
+sudo nano /etc/rc.local
+
+/home/pi/bin/script_auto_run
+
+/root/bin/script_auto_run
+
+sua port:
+
+sudo nano /media/Port_Num.txt
+
+address 10.211.0.200
+netmask 255.255.255.0
+network 10.211.0.0
+broadcast 10.211.0.255
+gateway 10.211.0.231

@@ -1,0 +1,23 @@
+cai dat phan thu vien cho 1-w:
+
+	sudo modprobe w1-gpio
+	sudo modprobe w1-therm
+
+muon no tu chay thi them vao module:
+
+	sudo nano /etc/modules
+
+	them 2 dong sau vao roi luu lai
+		w1-gpio
+		w1-therm
+
+chinh sua chan da ta cho chuan 1-w:
+	neu sau khi nhap thu vien w1-gpio va w1-therm xong ma vao trong
+	/sys/bus/w1/devices ma ko co thiet bi nao thi ta lam nhu duoi
+
+	sudo nano /boot/config.txt 
+
+	Page down to the bottom of the file and paste or type in these two lines
+
+	# 1-wire settings
+	dtoverlay=w1-gpio,gpiopin=4

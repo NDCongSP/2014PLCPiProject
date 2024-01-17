@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name= autorunweb
+Comment= Chay web HMI
+Exec=sudo sh /home/pi/runwebsite.sh
+Icon=/usr/share/pixmaps/dillo.xpm
+Type=Application
+Encoding=UTF-8
+Terminal=false
+Categories=None;

@@ -1,0 +1,11 @@
+sudo df -h  : xem cac phan vung
+
+sudo fdisk /dev/mmcblk0  
+
+d
+2
+d
+3
+n
+p
+2

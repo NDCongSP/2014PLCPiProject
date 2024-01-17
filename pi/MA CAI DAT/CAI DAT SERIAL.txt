@@ -1,0 +1,13 @@
+1. Cai thu vien Pyserial vao
+cd pyserial
+sudo python setup.py install
+2. chinh sua tap tin cmdline.txt
+sudo nano /boot/cmdline.txt
+hien ra 1 dong thong tin. trong do co "console=ttyAMA0,115200"
+ta xoa doan nay di. roi luu lai
+3. chinh sua file inittab
+sudo nano /etc/inittab
+commented dong
+"respawn :/sbin/getty L ttyAMA0 115200 vt100"
+luu lai
+4. khoi dong lai raspberry

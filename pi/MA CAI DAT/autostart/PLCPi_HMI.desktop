@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name= PLCPi_HMI
+Comment= Chay web HMI
+Exec=sudo mono /root/Desktop/Bodem.exe
+Icon=/usr/share/pixmaps/dillo.xpm
+Type=Application
+Encoding=UTF-8
+Terminal=false
+Categories=None;

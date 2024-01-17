@@ -1,0 +1,4 @@
+1. chinhr sua 1 so thong tin trong interfaces
+sudo nano /etc/network/interfaces
+2.chinh sua cac thong so mang trong file duoi
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf

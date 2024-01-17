@@ -1,0 +1,4 @@
+sudo apt-get install tightvncserver
+sudo apt-get install xtightvncviewer
+
+sudo apt-get install xrdp // dung remort trong windown

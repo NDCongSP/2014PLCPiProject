@@ -1,0 +1,38 @@
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+
+echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
+
+echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
+
+sudo apt-get update
+sudo apt-get upgrade 
+
+sudo apt-get install mono-complete
+
+mono --version  
+hoac
+mono -V 
+
+
+sudo apt-get install automake
+sudo apt-get install libtool
+sudo apt-get install gettext
+git clone git://github.com/mono/mono.git
+cd mono
+./autogen.sh --prefix=/usr/local
+sudo make
+sudo make install
+
+sudo apt-get install monodevelop
+
+sudo apt-get install xterm
+
+mono --version
+
+sudo apt-get purge libmono* cli-common mono-runtime
+
+sudo apt-get autoremove
+
+sudo dpkg --configure -a
+
+sudo apt-get -f install

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name= run_console_app
+Comment= chay chuong trinh console
+Exec=lxterminal --command “mono path_to_file/filename”
+Icon=/usr/share/pixmaps/dillo.xpm
+Type=Application
+Encoding=UTF-8
+Terminal=false
+Categories=None;

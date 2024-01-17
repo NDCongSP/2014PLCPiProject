@@ -1,0 +1,209 @@
+1.cau hinh ban dau
+sudo raspi-config
+------------------------------------------------------------------------------------------------------------
+2.thay doi mat khau root
+sudo passwd
+
+nhap 100100
+------------------------------------------------------------------------------------------------------------
+3.cai dat remort desktop
+sudo apt-get install xrdp -y
+------------------------------------------------------------------------------------------------------------
+4.khoi dong lai
+
+sudo reboot
+------------------------------------------------------------------------------------------------------------
+5.update
+sudo apt-get update
+------------------------------------------------------------------------------------------------------------
+6.upgrade
+sudo apt-get upgrade -y
+------------------------------------------------------------------------------------------------------------
+7.reboot
+sudo reboot
+------------------------------------------------------------------------------------------------------------
+8. cai dat xsp4
+
+sudo apt-get install mono-xsp4 -y
+------------------------------------------------------------------------------------------------------------
+9.cai dat mono
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+
+echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
+
+echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
+
+sudo apt-get update
+sudo apt-get upgrade -y
+
+sudo apt-get install mono-complete -y
+------------------------------------------------------------------------------------------------------------
+10.cai dat ds18b20 & tu nhan HDMI
+
+sudo nano /etc/modules
+
+them 2 dong duoi vao roi luu lai
+
+w1-gpio
+w1-therm
+
+chinh sua chan da ta cho chuan 1-w:
+
+sudo nano /boot/config.txt
+
+them 2 dong duoi vao
+# 1-wire settings
+dtoverlay=w1-gpio,gpiopin=4
+
+bo command dong "hdmi_force_hotplug=1" 
+
+luu lai
+------------------------------------------------------------------------------------------------------------
+11.cai dat dht21
+sudo apt-get install python2.7-dev -y
+cd Adafruit_Python_DHT-master
+sudo python setup.py install
+------------------------------------------------------------------------------------------------------------
+12.cai dat led status
+#sudo mkdir ./bin
+#cd ./bin
+#sudo nano script_auto_run
+
+#sudo python /media/on_off.py &
+#sudo python /media/TatDO_Status/tatDO.py
+
+#sudo chmod 755 script_auto_run
+
+#sudo nano /etc/rc.local
+
+#/root/bin/script_auto_run
+
+
+sudo crontab -e
+@reboot python /media/TatDO_Status/tatDO.py
+------------------------------------------------------------------------------------------------------------
+13.cai dat serial
+sudo nano /boot/cmdline.txt
+	hien ra 1 dong thong tin. trong do co "console=ttyAMA0,115200"
+	ta xoa doan nay di. roi luu lai
+
+chinh sua file inittab
+	sudo nano /etc/inittab
+	commented dong
+	"respawn :/sbin/getty L ttyAMA0 115200 vt100"
+	luu lai
+------------------------------------------------------------------------------------------------------------
+14.dang nhap root
+sudo nano /etc/inittab
+
+command dong 1:2345:respawn:/sbin/getty 115200 tty1
+
+thay bang dong
+1:2345:respawn:/bin/login -f root tty1 </dev/tty1 >/dev/tty1 2>&1
+ luu lai
+
+chinh sua file rc.local
+
+sudo nano /etc/rc.local
+	su -l root -c startx
+------------------------------------------------------------------------------------------------------------
+15.bat i2c
+sudo raspi-config
+------------------------------------------------------------------------------------------------------------
+16.reboot
+------------------------------------------------------------------------------------------------------------
+17.cai dat i2c
+sudo apt-get install python-smbus -y
+
+sudo nano /etc/modprobe.d/raspi-blacklist.conf
+
+#blacklist spi-bcm2708
+#blacklist i2c-bcm2708
+
+sudo nano /etc/modules
+
+i2c-dev
+i2c-bcm2708
+rtc-ds1307
+
+sudo adduser root i2c
+
+crontab -e
+them 2 dong duoi vao duoi cung roi luu lai
+@reboot echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-1/new_device &
+@reboot sudo hwclock -s
+------------------------------------------------------------------------------------------------------------
+18.cai dat usb 3g
+
+sudo apt-get install ppp usb-modeswitch wvdial -y
+
+chinh sua file wvdial.con1
+sudo nano /etc/wvdial.conf
+
+[Dialer Defaults]
+Init1 = ATZ
+Init2 = ATE1
+Init3 = AT+CGDCONT=1,"IP","v-internet"
+Stupid Mode = 1
+Modem Type = Analog Modem
+ISDN = 0
+Phone = *99#
+Modem = /dev/ttyUSB0
+Username = { }
+Password = { }
+Baud = 460800
+------------------------------------------------------------------------------------------------------------
+19.cai dat gui email
+certmgr -ssl smtps://smtp.gmail.com:465
+------------------------------------------------------------------------------------------------------------
+20.cai dat mysql
+sudo apt-get install mysql-server -y
+neu lenh tren bao loi thi chay lenh duoi
+sudo apt-get install mysql-server --force-yes
+
+-cau hinh co so du lieu:
+sudo nano /etc/mysql/my.cnf
+doi 127.0.0.1 thah 0.0.0.0
+
+sudo service mysql restart
+
+mysql -p -u root
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '100100';
+flush privileges;
+exit;
+------------------------------------------------------------------------------------------------------------
+21.restores databases mac dinh cua PLCPi vao con pi
+dung cong su MySQL Workben tren may tinh ket noi vao roi import database vao
+dat ten co so du lieu laf "DB_PLCPi"
+------------------------------------------------------------------------------------------------------------
+22. cai dat ip mac dinhexit
+
+sudo nano /etc/network/interfaces
+
+address 192.168.1.10
+netmask 255.255.255.0
+gateway 192.168.1.1
+------------------------------------------------------------------------------------------------------------
+23.tat screen sleep
+thu cach 2
+Force the screen to stay on
+sudo nano /etc/lightdm/lightdm.conf
+Add the following lines to the [SeatDefaults] section:
+# don't sleep the screen
+xserver-command=X -s 0 dpms
+------------------------------------------------------------------------------------------------------------
+24.Doi DNS 
+sudo nano /etc/resolv.conf
+
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+------------------------------------------------------------------------------------------------------------
+cai xong he dieu hanh va cac phan mem cho PCLCPi (s) dung raspberry pi 2
+tong cong co 24 buoc de cai xong he dieu hanh cho PLCPi
+------------------------------------------------------------------------------------------------------------
+xoa mysql
+apt-get remove --purge 'mysql-.*' hoac apt-get remove --purge 'mysql-server.*'
+
+xem cac chuong trinh dang chay
+ps aux | less

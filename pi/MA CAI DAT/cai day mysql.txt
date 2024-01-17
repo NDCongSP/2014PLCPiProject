@@ -1,0 +1,3 @@
+GRANT ALL PRIVILEGES ON report.* TO 'root'@'%' IDENTIFIED BY 'MY_PASSWORD';
+
+flush privileges;

@@ -1,0 +1,102 @@
+1.
+sudo apt-get update
+
+2.
+sudo apt-get install ppp usb-modeswitch wvdial
+
+3.tao file chuyen che do
+sudo nano /etc/usb_modeswitch.conf
+DefaultVendor=0x12d1 
+DefaultProduct=0x1446
+
+TargetVendor=0x12d1 
+TargetProduct=0x1436
+
+MessageContent="5553424312345678000000000000061e000000000000000000000000000000"
+MessageContent2="5553424312345679000000000000061b000000020000000000000000000000" 
+MessageContent3="55534243123456702000000080000c85010101180101010101000000000000"
+
+4.chuyen che do
+sudo usb_modeswitch -c /etc/usb_modeswitch.conf
+hoac
+usb_modeswitch -v 12d1 -p 15ca -V 12d1 -P 1506 -M 55534243123456780000000000000011062000000100000000000000000000
+
+
+5.kiem tra cac cong usb
+
+ls -al /dev/serial/by-id/usb*
+ ls -al /dev/disk/by-id/usb*Storage*
+
+sudo dmesg | grep usb
+ls -al /dev/ttyUSB0
+ls -al /dev/gsm*
+ls /dev/ttyUSB*
+dmesg | grep GSM | grep attached //kiem tra usb 3g modem
+wvdialconf /etc/wvdial.conf // kiem tra toc do usb 3g
+
+ C?u hình card m?ng ppp0
+
+-         Thay d?i netmask
+
+            Ifconfig ppp0 netmask 255.0.0.0
+
+-         Thi?t l?p default gateway cho m?ng
+
+            route add default gw 10.0.0.1 ppp0
+
+-         Thi?t l?p DNS Server, s?a file nano /etc/resolv.conf
+route -n
+
+
+6.tao file de ket noi internet
+sudo nano /etc/wvdial.conf
+
+[Dialer Defaults]
+Init1 = ATZ
+Init2 = ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+#Init2 = ATE1
+Init3 = AT+CGDCONT=1,"IP","v-internet"
+Stupid Mode = 1
+Modem Type = Analog Modem
+ISDN = 0
+Phone = *99#
+Modem = /dev/ttyUSB0
+Username = { }
+Password = { }
+Baud = 460800
+
+
+7.ket noi 3g
+sudo wvdial
+
+9.tu dong chay 3g modem
+
+sudo -i
+cd /root
+nano 3GModem.sh
+
+#!/bin/bash
+sleep 1m
+udevadm trigger
+sleep 1m
+Wvdial
+
+luu lai
+
+chmod 755 3GModem.sh
+
+nano /etc/rc.local
+
+/root/3GModem.sh &
+
+luu lai
+
+//////////////////////////////////////////////////////
+thao tac cac lenh ATCommand truc tiep tren LXTerminal
+
+1.cai picocom
+sudo apt-get install picocom
+
+2.chay dong lenh sau de ket noi vao module GSM de thuc hien lenh ATCommand
+
+ picocom /dev/ttyUSB0 -b 115200 -l

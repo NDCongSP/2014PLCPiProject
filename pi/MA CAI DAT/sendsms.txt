@@ -1,0 +1,12 @@
+1. cai dat picom de nhap lenh AT command. co the co hoac ko
+sudo apt-get install picocom
+
+2. mo port usb 3g GSM modem
+picocom /dev/ttyUSB0 -b 115200 -l
+
+3. chon kieu gui sms
+AT+CMGF=1 
+
+4.gui sms
+AT+CMGS="so dien thoai" enter
+"nhap noi dung can gui" bam Crtl+z

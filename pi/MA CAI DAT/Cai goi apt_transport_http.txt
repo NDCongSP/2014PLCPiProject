@@ -1,0 +1,3 @@
+dpkg -i apt-transport-https_1.0.9.8.4_armhf.deb
+
+https://www.raspberrypi.org/forums/viewtopic.php?t=199422

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name= App
+Comment= Chay App
+Exec=lxterminal –command “mono path_to_file/filename”
+Icon=/usr/share/pixmaps/dillo.xpm
+Type=Application
+Encoding=UTF-8
+Terminal=false
+Categories=None;

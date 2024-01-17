@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name= autorunserver
+Comment= Chay server xsp4
+Exec=lxterminal --command “xsp4 --root /root/Desktop/Webform_HMI_PLCPi_App1 --port 9000”
+Icon=/usr/share/pixmaps/dillo.xpm
+Type=Application
+Encoding=UTF-8
+Terminal=false
+Categories=None;
