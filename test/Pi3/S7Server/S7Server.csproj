@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>S7Server</RootNamespace>
     <AssemblyName>S7Server</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,11 +36,16 @@
     <ApplicationIcon>logo plcpi.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PLCPi">
-      <HintPath>C:\Program Files\ATPro\PLCPi\PLCPi.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>C:\Program Files\ATPro\PLCPi\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\GatewayPiMVC\Others\dllPLCPi\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PLCPi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\PLCPiForPC\PLCPi\PLCPi\bin\Debug\PLCPi.dll</HintPath>
+    </Reference>
+    <Reference Include="snap7.net, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GatewayPiMVC\Others\dllPLCPi\snap7.net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

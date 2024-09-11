@@ -39,10 +39,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this._txtDB0 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this._txtDB15 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +64,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(420, 85);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 16);
+            this.label7.Size = new System.Drawing.Size(110, 16);
             this.label7.TabIndex = 28;
             this.label7.Text = "Vùng Nhớ IB[1]";
             // 
@@ -71,7 +74,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(295, 85);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 16);
+            this.label6.Size = new System.Drawing.Size(117, 16);
             this.label6.TabIndex = 27;
             this.label6.Text = "Vùng Nhớ QB[1]";
             // 
@@ -109,7 +112,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(10, 85);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 16);
+            this.label3.Size = new System.Drawing.Size(122, 16);
             this.label3.TabIndex = 23;
             this.label3.Text = "Cập Nhật DB1[0]";
             // 
@@ -129,19 +132,19 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(152, 85);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 16);
+            this.label1.Size = new System.Drawing.Size(125, 16);
             this.label1.TabIndex = 21;
             this.label1.Text = "Vùng Nhớ DB1[1]";
             // 
-            // textBox2
+            // _txtDB0
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(12, 112);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(108, 35);
-            this.textBox2.TabIndex = 20;
-            this.textBox2.Text = "0";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._txtDB0.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtDB0.Location = new System.Drawing.Point(12, 112);
+            this._txtDB0.Name = "_txtDB0";
+            this._txtDB0.Size = new System.Drawing.Size(108, 35);
+            this._txtDB0.TabIndex = 20;
+            this._txtDB0.Text = "0";
+            this._txtDB0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // timer1
             // 
@@ -171,12 +174,45 @@
             this.label9.Text = "S7 ETHERNET SERVER";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(12, 206);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(507, 201);
+            this.textBox1.TabIndex = 33;
+            this.textBox1.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(12, 167);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(130, 16);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "Cập Nhật DB1[15]";
+            // 
+            // _txtDB15
+            // 
+            this._txtDB15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._txtDB15.Location = new System.Drawing.Point(163, 158);
+            this._txtDB15.Name = "_txtDB15";
+            this._txtDB15.Size = new System.Drawing.Size(96, 35);
+            this._txtDB15.TabIndex = 34;
+            this._txtDB15.Text = "0";
+            this._txtDB15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(532, 194);
+            this.ClientSize = new System.Drawing.Size(532, 409);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this._txtDB15);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -188,7 +224,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this._txtDB0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -213,10 +249,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox _txtDB0;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox _txtDB15;
     }
 }
 

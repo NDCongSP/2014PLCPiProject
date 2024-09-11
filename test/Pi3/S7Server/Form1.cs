@@ -29,6 +29,26 @@ namespace S7Server
             if (trangthai == "GOOD")
             {
                 panel1.BackColor = Color.Green;
+
+                _txtDB0.KeyDown += (s, o) =>
+                {
+                    if (o.KeyCode==Keys.Enter)
+                    {
+                        var t = (TextBox)s;
+                        var v = Convert.ToByte(_txtDB0.Text);
+                        myPLC.S7Ethernet.Server.DataBlock[0] = (byte)v;
+                    }
+                };
+
+                _txtDB15.KeyDown += (s, o) =>
+                {
+                    if (o.KeyCode == Keys.Enter)
+                    {
+                        var t = (TextBox)s;
+                        var v = Convert.ToByte(_txtDB15.Text);
+                        myPLC.S7Ethernet.Server.DataBlock[15] = (byte)v;
+                    }
+                };
             }
             else
             {
@@ -40,21 +60,22 @@ namespace S7Server
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-           
-               
+            timer1.Enabled = false;
+            if (this.InvokeRequired)
+            {
                 label2.Text = Convert.ToString(myPLC.S7Ethernet.Server.DataBlock[1]);
-                label4.Text = Convert.ToString(myPLC.S7Ethernet.Server.NgoRa.MangNgoRa[1]);
-                label5.Text = Convert.ToString(myPLC.S7Ethernet.Server.NgoVao.MangNgoVao[1]);
-                myPLC.S7Ethernet.Server.DataBlock[0] = Convert.ToByte(textBox2.Text);
-
-                myPLC.NgoVao.DocNgoVao("I1");
-                if (label4.Text != null)
-                {
-                    myPLC.NgoRa.XuatNgoRa("Q1", Convert.ToByte(label4.Text));
-                }
-           
+                _txtDB0.Text = Convert.ToString(myPLC.S7Ethernet.Server.DataBlock[0]);
+                _txtDB15.Text = Convert.ToString(myPLC.S7Ethernet.Server.DataBlock[15]);
+            }
+            else
+            {
+                label2.Text = Convert.ToString(myPLC.S7Ethernet.Server.DataBlock[1]);
+                _txtDB0.Text = Convert.ToString(myPLC.S7Ethernet.Server.DataBlock[0]);
+                _txtDB15.Text = Convert.ToString(myPLC.S7Ethernet.Server.DataBlock[15]);
+            }
+            timer1.Enabled = true;
         }
 
-        
+
     }
 }
