@@ -72,7 +72,7 @@ namespace PLCPiProject
         /// Còn String trả về khác "GOOD" là kết nối bị lỗi
         /// </summary>
         /// <returns></returns>
-        public string Khoitao()
+        public string Khoitao(string ipAdd, int port = 102)
         {
             try
             {
@@ -101,9 +101,9 @@ namespace PLCPiProject
                                     1,                   // Its number is 1 (DB1)
                                      ref DataBlock,                 // Our buffer for DB1
                                     DataBlock.Length);         // Its size
-                // Do the same for DB2 and DB3
+                                                               // Do the same for DB2 and DB3
 
-                
+
                 //Server.RegisterArea(S7Server.srvAreaMK, 0, MB, MB.Length);
 
                 //TheEventCallBack = new S7Server.TSrvCallback(EventCallback);
@@ -112,8 +112,10 @@ namespace PLCPiProject
                 //Server.EventMask = ~S7Server.evcDataRead;
                 //Server.SetEventsCallBack(TheEventCallBack, IntPtr.Zero);
                 //Server.SetReadEventsCallBack(TheReadCallBack, IntPtr.Zero);
+                //
+                Server.SetParam(2, ref port);                               
 
-                int Error = Server.StartTo(Server_IP);
+                int Error = Server.StartTo(ipAdd);
                 if (Error == 0)
                 {
                     Console.WriteLine("Complete");

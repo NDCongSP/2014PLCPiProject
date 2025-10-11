@@ -32,19 +32,24 @@ namespace PLCPiProject
         /// </summary>
         /// <param name="ip">địa chỉ IP của Server "0.0.0.0"</param>
         /// <returns></returns>
-        public string KetNoi(string ip)
+        public string KetNoi(string ip, int port = 102)
         {
             try
             {
+                
                 MyClient = new S7Client();
+                int internalPort = port;
+                MyClient.SetParam(2, ref internalPort);
+
                 IP_Server = ip;
                 Ping Ping_IPAdd = new Ping(); //tạo đối tượng để kiểm tra kết nối internet của server và client
                 PingReply pingresult; //thuộc tính chứa các thông số khi ping. trong đó có thông số status(trạng thái kết nối internet)
-
+      
                 pingresult = Ping_IPAdd.Send(ip);
 
                 if (pingresult.Status.ToString() == "Success")
-                {                 
+                {
+
                     int error = MyClient.ConnectTo(ip, 0, 0);
                     if (error == 0)
                     {
